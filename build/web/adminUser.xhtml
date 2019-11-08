@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Table Users</title>
+        <h:outputStylesheet library="css" name="tableCSS.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="sb-admin-2.css"/>
+    </h:head>
+    <h:body>
+        <ui:insert name="header2">
+            <ui:include src="/templating3/header.xhtml"/>
+        </ui:insert>
+        
+        <h:form>
+            <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>User <b>Details</b></h2></div>
+                    <div class="col-sm-4">
+<!--                        <div class="search-box">
+                            <i class="material-icons">&#xE8B6;</i>
+                            <h:inputText class="form-control" pt:placeholder="Search"/>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <h:dataTable class="table table-striped table-hover table-bordered"
+                         value="#{tblUser.record}" var="item">
+                <h:column>
+                    <f:facet name="header">ID USER</f:facet>
+                    #{item.idUser}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">NAME</f:facet>
+                    #{item.nameUser}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">EMAIL</f:facet>
+                    #{item.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">USERNAME</f:facet>
+                    #{item.username}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">PASSWORD</f:facet>
+                    #{item.password}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ROLE</f:facet>
+                    #{item.role}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">DELETE or EDIT</f:facet>
+                    <h:commandLink value="Delete" class="delete" action="#{tblUser.deleteUser(item.idUser)}"/>
+                    <h:commandLink value="Edit" class="edit" action="userForm.xhtml"/>
+            </h:column>
+            </h:dataTable>
+        </div>
+        </div>
+        </h:form>
+    </h:body>
+</html>
+

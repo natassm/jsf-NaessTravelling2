@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Insert Destination</title>
+        <h:outputStylesheet library="css" name="tableCSS.css"/>
+    </h:head>
+    <h:body>
+        <ui:insert name="header3">
+            <ui:include src="/templating3/header.xhtml"/>
+        </ui:insert>
+        <h:form>
+            <section class="contact py-5">
+	<div class="container py-lg-5 py-sm-4">
+		<h2 class="heading text-capitalize text-center mb-lg-5 mb-4">Add New Destination</h2>
+		<div class="contact-grids">
+			<div class="row">
+				<div class="col-lg-7 contact-left-form">
+                                    <h:form class="row">
+                                        
+                                        
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:outputText value="Destination ID"/>
+                                            <h:inputText value="#{tblDestination.idDestination}"
+                                                         class="form-control"/>
+                                        </div>
+                                        
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:outputText value="Destination name"/>
+                                            <h:inputText value="#{tblDestination.name}"
+                                                         class="form-control" />
+                                        </div>
+                                        
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:outputText value="Destination price"/>
+                                            <h:inputText value="#{tblDestination.price}"
+                                                         class="form-control"/>
+                                        </div>
+                                        
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:outputText value="Destination facilities"/>
+                                            <h:inputText value="#{tblDestination.facilites}"
+                                                         class="form-control"/>
+                                        </div>
+                                        
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:outputText value="Additional Info"/>
+                                            <h:inputText value="#{tblDestination.additionalInfo}"
+                                                         class="form-control"/>
+                                        </div>
+                                    <br/>
+						<div class="col-md-12 booking-button">
+                                                    <h:commandButton class="btn btn-block sent-butnn" value="Insert" action="#{tblDestination.save()}"/>
+						</div>
+                                    </h:form>
+                                </div>
+			</div>
+		</div>
+	</div>
+</section>
+        </h:form>
+        
+        
+<!--        <h:form>
+            <h:outputText value="id Destination"/> <br/>
+            <h:inputText value="#{tblDestination.idDestination}" /> <br/>
+            <h:outputText value="Name Destination"/> <br/>
+            <h:inputText value="#{tblDestination.name}" /> <br/>
+            <h:outputText value="Facilities"/> <br/>
+            <h:inputText value="#{tblDestination.facilites}" /> <br/>
+            <h:outputText value="Price"/> <br/>
+            <h:inputText value="#{tblDestination.price}" /> <br/>
+            <h:outputText value="Additional Info"/> <br/>
+            <h:inputText value="#{tblDestination.additionalInfo}" /> <br/> <br/>
+            <h:commandButton value="SAVE" action="#{tblDestination.save()}" /> 
+        </h:form>-->
+            
+    </h:body>
+</html>
+

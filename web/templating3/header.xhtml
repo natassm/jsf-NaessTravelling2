@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Header</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="css_slider.css"/>
+        <h:outputStylesheet library="css" name="font-awesome.min.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"/>
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <header>
+            <div class="container">
+                <!-- nav -->
+                <nav class="py-md-4 py-3 d-lg-flex">
+                    <div id="logo">
+                        <h1 class="mt-md-0 mt-2"><h:commandLink action="#"><span class="fa fa-map-signs"></span>Naess Tour</h:commandLink></h1>
+                    </div>
+                    <h:outputLabel for="drop" class="toggle"><span class="fa fa-bars"></span></h:outputLabel>
+                    <ul class="menu ml-auto mt-1">
+                        <li class=""><h:commandLink action="adminDestination.xhtml">Destination</h:commandLink></li>
+                            <li class=""><h:commandLink action="adminGuide.xhtml">Guide</h:commandLink></li>
+                            <li class=""><h:commandLink action="adminUser.xhtml">User</h:commandLink></li>
+                            <li class=""><h:commandLink action="adminBooking.xhtml">Booking</h:commandLink></li>
+                            <li class="logout"><h:commandLink action="index.xhtml">Log Out</h:commandLink></li>
+                    </ul>
+		</nav>
+		<!-- //nav -->
+            </div>
+        </header>
+            
+            <section class="banner_inner2" id="home">
+	<div class="banner_inner_overlay2">
+	</div>
+</section>
+        </h:form>
+    </h:body>
+</html>
+

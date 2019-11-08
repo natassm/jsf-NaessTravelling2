@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Booking</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="css_slider.css"/>
+        <h:outputStylesheet library="css" name="font-awesome.min.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"/>
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <ui:insert name="header2">
+            <ui:include src="/templating2/header3.xhtml"/>
+        </ui:insert>
+        
+        <h:form>
+            <section class="contact py-5">
+	<div class="container py-lg-5 py-sm-4">
+		<h2 class="heading text-capitalize text-center mb-lg-5 mb-4">Book Your Tour</h2>
+		<div class="contact-grids">
+			<div class="row">
+				<div class="col-lg-7 contact-left-form">
+                                    <h:form class="row">
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:inputText 
+                                                         class="form-control" required="required"
+                                                         pt:placeholder="Name"/>
+                                        </div>
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:inputText
+                                                         class="form-control" required="required"
+                                                         pt:placeholder="IdDes"/>
+                                        </div>
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:inputText 
+                                                         class="form-control" required="required"
+                                                         pt:placeholder="IdGuide"/>
+                                        </div>
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:inputText 
+                                                         class="form-control" required="required"
+                                                         pt:placeholder="Phone"/>
+                                        </div>
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:inputText 
+                                                         class="form-control" required="required"
+                                                         pt:placeholder="DD/MM/YYYY"/>
+                                        </div>
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:inputText 
+                                                         class="form-control" required="required"
+                                                         pt:placeholder="People Amount"/>
+                                        </div>
+                                        <div class="col-sm-12 form-group contact-forms">
+                                            <h:inputText 
+                                                         class="form-control" required="required"
+                                                         pt:placeholder="Total Days"/>
+                                        </div>
+                                        
+                                    </h:form><br/>
+						<div class="col-md-12 booking-button">
+                                                    <h:commandButton class="btn btn-block sent-butnn" value="Book Now"
+                                                                     action="#{popupController.show()}"/>
+						</div>
+                                </div>
+			</div>
+		</div>
+	</div>
+</section>
+        
+        
+        <h:panelGroup layout="block" styleClass="popup-panel-overlay" rendered="#{popupController.showPopup}">
+                <div class="popup-panel">
+                    <h2>Awesome!</h2><br/>
+                    <h4>Your booking has been confirmed.</h4> <br/>
+                    <h4>Check your email for details </h4><br/>
+                    <h:commandButton value="oke" action="#{popupController.hide()}">
+                        <f:ajax render="@form"/>
+                    </h:commandButton>
+                </div>
+            </h:panelGroup>
+            </h:form>
+        
+<!--        <ui:insert name="tbl">
+            <ui:include src="/list_desguide.xhtml"/>
+        </ui:insert>
+        
+        <ui:insert name="footer">
+            <ui:include src="/templating/footer.xhtml"/>
+        </ui:insert>-->
+    </h:body>
+</html>
+

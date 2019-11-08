@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 8, 2019 9:04:11 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJO.TblBooking" table="tbl_booking" catalog="naesstour" optimistic-lock="version">
+        <id name="idBooking" type="string">
+            <column name="id_booking" length="4" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tblDestination" class="POJO.TblDestination" fetch="select">
+            <column name="id_destination" length="4" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tblGuide" class="POJO.TblGuide" fetch="select">
+            <column name="id_guide" length="4" not-null="true" />
+        </many-to-one>
+        <property name="nameBooking" type="string">
+            <column name="name_booking" length="50" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="25" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+        <property name="peopleAmount" type="double">
+            <column name="people_amount" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="totalDays" type="double">
+            <column name="total_days" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="totalPrice" type="double">
+            <column name="total_price" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
